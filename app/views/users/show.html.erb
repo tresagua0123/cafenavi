@@ -1,13 +1,22 @@
-<h3 class="center">ユーザー詳細ページ</h3>
+
 
 <div class="row">
 
 <div class="col-sm-4">
-    <%= @user.email  %>
-    <%= @user.name  %>LV<%= @user.posts.count  %>
-    <% if @user.avatar.attached? %>
+   <%= @user.name  %>LV<%= @user.posts.count  %>
+
+    <div class="">
+<% if @user.avatar.attached? %>
+  <!--<%= image_tag @user.avatar, class:"img-fluid mb-2"  %> -->
+  <%= image_tag @user.thumbnail_sm %>
+</div>
+<% end %>
+ <%= @user.description  %>
+
+ 
+   <!-- <% if @user.avatar.attached? %>
             <%= image_tag @user.avatar, class:"img-fluid" %>
-    <% end %>
+    <% end %> -->
 
 </div>
 

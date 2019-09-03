@@ -1,7 +1,40 @@
 <h1>ユーザー一覧</h1>
-<% @users.each do |user| %>
-<a href="/users/<%= user.id %>"><%= user.email %></a>
-<hr>
+<!-- <% @users.each do |user| %>
+<a href="/users/<%= user.id %>"><%= user.name %></a>
+    <% if user.avatar.attached? %>
+    <%= image_tag user.thumbnail_sm,  style:"border-radius: 50%" %>
+    <% else %>
+     <%= image_tag 'cover.jpg', :size =>'80x80', style:"border-radius: 50%" %>
+    <% end %>
+
+
 <% end %>
+-->
+
 <%= link_to "ホームに戻る", posts_path  %>
+
+      <div class="row">
+   
+     <% @users.each do |user| %>
+
+<div class="card col-lg-2 p-2 m-3">
+  
+
+    <% if user.avatar.attached? %>
+    <%= image_tag user.thumbnail_sm, :size =>'80x180', class: "card-img-top" %>
+    <% else %>
+     <%= image_tag 'cover.jpg', :size =>'80x180', class: "card-img-top" %>
+    <% end %>
+
+    <div class="card-body">
+      <h5><strong><%= link_to user.name, user_path(user), class:"text-dark"  %></strong></h5>
+      <p>プロフィール: </p>
+      <p><%= user.description  %></p>
+    </div>
+   
+  </div>
+   <% end %>
+
+      </div>
+
 
