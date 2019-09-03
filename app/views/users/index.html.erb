@@ -21,9 +21,9 @@
   
 
     <% if user.avatar.attached? %>
-    <%= image_tag user.thumbnail_sm, :size =>'80x180', class: "card-img-top" %>
+    <%= image_tag user.thumbnail_sm, :size =>'80x140', class: "card-img-top" %>
     <% else %>
-     <%= image_tag 'cover.jpg', :size =>'80x180', class: "card-img-top" %>
+     <%= image_tag 'cover.jpg', :size =>'80x140', class: "card-img-top" %>
     <% end %>
 
     <div class="card-body">

@@ -5,11 +5,11 @@
 <div class="col-sm-4">
    <%= @user.name  %>LV<%= @user.posts.count  %>
 
-    <div class="">
 <% if @user.avatar.attached? %>
   <!--<%= image_tag @user.avatar, class:"img-fluid mb-2"  %> -->
   <%= image_tag @user.thumbnail_sm %>
-</div>
+  <% else %>
+  <%= image_tag 'cover.jpg', :size =>'80x80' %>
 <% end %>
  <%= @user.description  %>
 
