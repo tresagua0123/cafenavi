@@ -1,13 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
    
    
+<div class="container">
 
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto ">
     <li> 
       
-  
-    <%= link_to "カフェナビ！", root_path, class:"navbar-brand h1" %>
-    <%= link_to "@" + current_user.name + "LV. "+ current_user.posts.count.to_s , user_path(current_user)  %>
+    <%= link_to "カフェナビ！", root_path, class:"navbar-brand " %>
+      <% if current_user %>
+       <%= link_to "@" + current_user.name + "LV. "+ current_user.posts.count.to_s ,  edit_user_registration_path   %>
+        
+      <% end %>
     <!--
       <% if current_user && current_user.avatar.attached? %>
        <%= image_tag current_user.thumbnail_sm,  style:"border-radius: 50%" %>
@@ -16,7 +19,10 @@
 
    </li>
     </ul>
+   
   
+  
+
     <ul class="navbar-nav">  
 
       <!-- <ul class="navbar-nav"> -->
@@ -28,18 +34,45 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 
     <div class="navbar-nav">
-    <p>
-      <a class="nav-item nav-link active btn "><%= link_to '新規投稿', new_post_path %>
-          <%= icon 'fas','coffee' %> </a>
-    </p>
-     <p>
-      <a class="nav-item nav-link "><%= link_to 'プロフィール設定', edit_user_registration_path %>
-      <%= icon 'fas','cog' %></a>
-      </p>
-       <p>
-      <a class="nav-item nav-link "><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-      <%= icon 'fas','circle-notch' %></a>
-        </p>
+
+     <% if current_user %>
+
+     <a class="nav-item nav-link active btn "> 
+        
+      <%= link_to  (icon 'fas','paint-brush'), new_post_path, class:"fa fa-2x" %></a>
+    
+      <a class="nav-item nav-link active btn "> 
+        
+      <%= link_to  (icon 'fas','coffee'), posts_path,class:"fa fa-2x"  %></a>
+    
+
+      
+      <a class="nav-item nav-link ">
+        
+      <%= link_to (icon 'fas','user-friends') , users_path,class:"fa fa-2x" %>
+     
+      </a>
+
+         
+
+      <a class="nav-item nav-link "><%= link_to (icon 'fas','circle-notch'), 
+      destroy_user_session_path, method: :delete, class:"fa fa-2x" %>
+      </a> 
+
+        <% else %>
+
+      
+        <a class="nav-item nav-link "><%= link_to (icon 'fas','user-plus'), 
+      new_user_registration_path,  class:"fa fa-2x" %>
+      </a> 
+
+
+         <a class="nav-item nav-link "><%= link_to (icon 'fas','circle-notch'), 
+       user_session_path,  class:"fa fa-2x" %>
+      </a> 
+        
+        <% end %>
+        
     </div>
   </div>
      <!--</ul> -->
@@ -60,6 +93,7 @@
 
     </ul>
 
+   </div>
     
 
 </nav>

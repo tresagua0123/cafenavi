@@ -1,5 +1,6 @@
 <h1>This is the page you post your coffee log!</h1>
 
+<!--
 <%= simple_form_for(@post) do |f| %>
   <%= f.error_notification %>
   
@@ -8,5 +9,26 @@
     style:"height: 620px;"  %>
     <%= f.input :address, required: true, label: false, placeholder:"住所"  %>
 
-    <%= f.button :submit, class:"btn btn-primary btn-block" %>
+    <%= f.button :submit, class:"btn btn-primary btn-block mb-4" %>
+<% end %>
+-->
+
+<%= form_with model: @post, local: true do |f|  %>
+
+<div class="form-group">
+<%= f.text_field :content, 
+class: "form-control mb-2", id:"post_name", placeholder:"タイトル"   %>
+<%= f.text_area :description, 
+class: "form-control mb-2", id:"post_description", placeholder:"詳細"   %>
+<%= f.text_area :address, 
+class: "form-control mb-2", id:"post_description", placeholder:"大まかな住所"   %>
+
+ 
+ <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+</div>
+
 <% end %>
