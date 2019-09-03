@@ -1,0 +1,20 @@
+
+<p>By <%= @post.user.name  %>LV. 
+<%= @post.user.posts.count %></p>
+<%= @post.content  %>
+
+<% if current_user == @post.user %>
+<%= link_to "投稿を削除", @post, method: :delete  %>
+<% end %>
+
+<p>いいね件数: <%= @post.likes.count  %></p>
+<% if current_user.already_liked?(@post) %>
+<%= button_to 'いいねを取り消す', post_like_path(@post), method: :delete  %>
+<% else %>
+<%= button_to 'いいね', post_likes_path(@post)  %>
+<% end %>
+<p>いいねしたユーザー</p>
+<% @post.liked_users.each do |user| %>
+<li><%= user.name  %></li>
+<% end %>
+<%= link_to "ホームへ戻る", posts_path  %>

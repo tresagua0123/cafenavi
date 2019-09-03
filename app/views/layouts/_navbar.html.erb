@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <h1> 
+      
+    <%= link_to "カフェナビ！", root_path, class:"navbar-brand h1" %>
+    <%= link_to (icon 'fas','coffee') ,root_path, class: 'navbar-brand h1' %>
+
+    
+    <% if current_user %>
+          <p class="navbar-brand">＠<%= current_user.name  %>LV.
+    <%= current_user.posts.count  %></p>
+    <% end %>
+    
+   </h1>
+    
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link navbar-right" href="#"></a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <% if current_user  %>
+       <li> <%= link_to 'アカウント設定|', edit_user_registration_path  %></li>
+        <li></li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete  %></li>
+      <% else  %>
+      <li class="nav-link"><%= link_to '新規登録|', new_user_registration_path  %></li>
+      <li class="nav-link"><%= link_to 'ログイン', new_user_session_path  %></li>
+      <% end %>
+    </ul>
+
+  </div>
+</nav>

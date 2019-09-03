@@ -1,0 +1,26 @@
+    <h3>投稿する
+    <%= (icon 'fas','plus') %></h2>
+    <%= simple_form_for @post do |f|  %>
+    <%= f.text_field :content  %>
+    <%= f.button :submit  %>
+    <% end %> </h3>
+
+    <h3>投稿一覧</h3>
+    <% @posts.each do |post| %>
+    <li><a class="text-dark" href="/users/<%= post.user.id%>"><%= post.user.name %></a>
+    LV.<%= post.user.posts.count %>
+    <%= link_to post.content, post_path(post) %>
+    <%= icon 'far', 'star'  %>
+    (<%= post.liked_users.count  %>)
+  
+        <% if current_user %>
+        <% if current_user.already_liked?(post)  %>
+        <% else %>
+        <%= link_to 'いいね', post_likes_path(post), method: :create,
+        class:"btn btn-info m-2" %>
+        <% end %>   
+        <% end %>
+    </li>
+    <% end %>
+
+
