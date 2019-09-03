@@ -1,16 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+
+
+<nav class="navbar navbar-expand-sm navbar-light bg-success">
    
    
 <div class="container">
 
     <ul class="navbar-nav mr-auto ">
     <li> 
-      
-    <%= link_to "カフェナビ！", root_path, class:"navbar-brand " %>
+      <em>
+    <%= link_to "Cafe Navi", root_path, class:"navbar-brand text-light" %>
+    </em>
+   
+    
       <% if current_user %>
-       <%= link_to "@" + current_user.name + "LV. "+ current_user.posts.count.to_s ,  edit_user_registration_path   %>
-        
+      
+       <%= link_to "@" + current_user.name + "LV. "+ current_user.posts.count.to_s ,  current_user, class:"text-light"   %>
+      
       <% end %>
+     </li>
     <!--
       <% if current_user && current_user.avatar.attached? %>
        <%= image_tag current_user.thumbnail_sm,  style:"border-radius: 50%" %>
@@ -39,36 +46,40 @@
 
      <a class="nav-item nav-link active btn "> 
         
-      <%= link_to  (icon 'fas','paint-brush'), new_post_path, class:"fa fa-2x" %></a>
+      <%= link_to  (icon 'fas','paint-brush'), new_post_path, class:"fa fa-2x text-light" %></a>
     
       <a class="nav-item nav-link active btn "> 
         
-      <%= link_to  (icon 'fas','coffee'), posts_path,class:"fa fa-2x"  %></a>
+      <%= link_to  (icon 'fas','coffee'), posts_path,class:"fa fa-2x text-light"  %></a>
     
 
       
       <a class="nav-item nav-link ">
         
-      <%= link_to (icon 'fas','user-friends') , users_path,class:"fa fa-2x" %>
+      <%= link_to (icon 'fas','user-friends') , users_path,class:"fa fa-2x text-light" %>
      
       </a>
+
+      <a class="nav-item nav-link "><%= link_to (icon 'fas','cog'), 
+      destroy_user_session_path, method: :delete, class:"fa fa-2x text-light" %>
+      </a> 
 
          
 
       <a class="nav-item nav-link "><%= link_to (icon 'fas','circle-notch'), 
-      destroy_user_session_path, method: :delete, class:"fa fa-2x" %>
+      destroy_user_session_path, method: :delete, class:"fa fa-2x text-light" %>
       </a> 
 
         <% else %>
 
       
         <a class="nav-item nav-link "><%= link_to (icon 'fas','user-plus'), 
-      new_user_registration_path,  class:"fa fa-2x" %>
+      new_user_registration_path,  class:"fa fa-2x text-light" %>
       </a> 
 
 
          <a class="nav-item nav-link "><%= link_to (icon 'fas','circle-notch'), 
-       user_session_path,  class:"fa fa-2x" %>
+       user_session_path,  class:"fa fa-2x text-light" %>
       </a> 
         
         <% end %>
@@ -97,4 +108,22 @@
     
 
 </nav>
+
+  <% if flash.notice.present? %>
+       <div class="alert alert-success ">
+   <%= flash.notice %>
+      </div>
+    <% end %>
+
+
+ <div class="jumbotron jumbotron-fluid ">
+      <div class="container">
+        <h1 class="text-center text-light">夢見るカフェが、</h1>
+        <h1 class="text-center text-light">ここにはある。</h1>
+        <div class="text-right">
+        <a class="btn btn-primary btn-lg " href="#" role="button">
+        <%= (icon 'fas','coffee')  %> 参加する</a>
+        </div>
+      </div>
+    </div>
 

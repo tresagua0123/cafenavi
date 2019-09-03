@@ -1,3 +1,9 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+.jumbotron{ 
+  background: url('story.jpg');
+  background-size: cover;
+  height: 350px;
+}

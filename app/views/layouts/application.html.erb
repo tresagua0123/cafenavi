@@ -10,22 +10,20 @@
 <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+     
   </head>
 
   <body>
   
-   <%= render 'layouts/navbar' %>
 
- 
+
+   <%= render 'layouts/navbar' %>
   
    
    <div class="container">
 
-     <% if flash.notice.present? %>
-     <div class="alert alert-success">
-   <%= flash.notice %>
-      </div>
-    <% end %>
+    
    
     <%= yield %>
    </div>
