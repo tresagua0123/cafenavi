@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get '/map_request', to: 'posts#map', as: 'map_request'
   devise_for :users
   resources :users
   resources :posts do

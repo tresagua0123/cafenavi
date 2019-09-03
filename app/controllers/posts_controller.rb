@@ -6,6 +6,9 @@ class PostsController < ApplicationController
     @post = Post.new
     @like = Like.new
   end
+  def new
+    @post = Post.new
+  end
 
   def show
     @post = Post.find(params[:id])
@@ -28,8 +31,18 @@ class PostsController < ApplicationController
     redirect_to posts_url, notice: "ポストを削除しました。"
   end
 
+  def map
+    # respond_to以下の記述によって、
+    # remote: trueのアクセスに対して、
+    # map.js.erbが変えるようになります。
+    respond_to do |format|
+      format.js
+    end
+  end
+  
+
   private
   def post_params 
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, :address, :latitude, :longitude)
   end
 end

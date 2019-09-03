@@ -1,0 +1,12 @@
+<h1>This is the page you post your coffee log!</h1>
+
+<%= simple_form_for(@post) do |f| %>
+  <%= f.error_notification %>
+  
+    <%= f.input :content, required: true, label: false, placeholder:"タイトル" %>
+    <%= f.input :description, required: true, label: false, placeholder:"詳細", 
+    style:"height: 620px;"  %>
+    <%= f.input :address, required: true, label: false, placeholder:"住所"  %>
+
+    <%= f.button :submit, class:"btn btn-primary btn-block" %>
+<% end %>

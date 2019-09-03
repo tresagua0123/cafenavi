@@ -10,4 +10,7 @@ class User < ApplicationRecord
   def already_liked?(post)
     self.likes.exists?(post_id: post.id)
   end
+  def thumbnail_sm
+    return self.avatar.variant(resize: '80x80!').processed
+  end
 end

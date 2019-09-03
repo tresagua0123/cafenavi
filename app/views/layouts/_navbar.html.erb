@@ -1,36 +1,66 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-   <h1> 
-      
-    <%= link_to "カフェナビ！", root_path, class:"navbar-brand h1" %>
-    <%= link_to (icon 'fas','coffee') ,root_path, class: 'navbar-brand h1' %>
+   
+   
 
+    <ul class="navbar-nav mr-auto">
+    <li> 
+      
+  
+    <%= link_to "カフェナビ！", root_path, class:"navbar-brand h1" %>
+    <%= link_to "@" + current_user.name + "LV. "+ current_user.posts.count.to_s , user_path(current_user)  %>
+    <!--
+      <% if current_user && current_user.avatar.attached? %>
+       <%= image_tag current_user.thumbnail_sm,  style:"border-radius: 50%" %>
+      <% end %> 
+    -->
     
-    <% if current_user %>
-          <p class="navbar-brand">＠<%= current_user.name  %>LV.
-    <%= current_user.posts.count  %></p>
-    <% end %>
-    
-   </h1>
-    
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   </li>
+    </ul>
+  
+    <ul class="navbar-nav">  
+
+      <!-- <ul class="navbar-nav"> -->
+
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link navbar-right" href="#"></a>
-      </li>
-    </ul>
-    <ul class="navbar-nav">
+    <div class="navbar-nav">
+    <p>
+      <a class="nav-item nav-link active btn "><%= link_to '新規投稿', new_post_path %>
+          <%= icon 'fas','coffee' %> </a>
+    </p>
+     <p>
+      <a class="nav-item nav-link "><%= link_to 'プロフィール設定', edit_user_registration_path %>
+      <%= icon 'fas','cog' %></a>
+      </p>
+       <p>
+      <a class="nav-item nav-link "><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+      <%= icon 'fas','circle-notch' %></a>
+        </p>
+    </div>
+  </div>
+     <!--</ul> -->
+
+      <!--
       <% if current_user  %>
-       <li> <%= link_to 'アカウント設定|', edit_user_registration_path  %></li>
-        <li></li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete  %></li>
+       <button type="button"  class="btn btn-info mx-1"> <%= link_to '新規投稿', new_post_path, class:"text-light"  %></button>
+       <button type="button"  class="btn btn-info mx-1"><%= link_to 'プロフィール設定', edit_user_registration_path, class:"text-light"  %></button>
+       <button type="button"  class="btn btn-info mx-1"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"text-light"  %></button>
       <% else  %>
       <li class="nav-link"><%= link_to '新規登録|', new_user_registration_path  %></li>
       <li class="nav-link"><%= link_to 'ログイン', new_user_session_path  %></li>
       <% end %>
+
+  
+
+      -->
+
     </ul>
 
-  </div>
+    
+
 </nav>
+

@@ -1,7 +1,11 @@
 
 <p>By <%= @post.user.name  %>LV. 
 <%= @post.user.posts.count %></p>
-<%= @post.content  %>
+<%= @post.content %>
+<%= @post.description %>
+<%= @post.address %>
+
+
 
 <% if current_user == @post.user %>
 <%= link_to "投稿を削除", @post, method: :delete  %>
@@ -17,4 +21,110 @@
 <% @post.liked_users.each do |user| %>
 <li><%= user.name  %></li>
 <% end %>
+
+
+
+
+<!-- 地名入力用のinputを追加 -->
+<!-- <input id="address" type="textbox" value="<%= @post.address %>"> -->
+<!-- 
+<p>住所：
+<input id="address" type="textbox" value="<%= @post.address %>" class="text-secondary" disabled>
+</p>
+-->
+<div id='map'>
+</div>
+
+
+<!-- buttonをクリックしたらcodeAddressを実行　-->
+
+
+<style>
+#map{
+  height: 400px;
+}
+</style>
+
+<script>
+/*
+mapを関数の外で定義(codeAddressでも使うため)
+geocoderを用意
+*/
+
+/*
+let map
+let geocoder
+
+function initMap(){
+  // geocoderを初期化
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: <%= @post.latitude %>, lng:<%= @post.longitude %> },
+  zoom: 8
+  });
+}
+*/
+
+window.onload = function(){
+  // 入力を取得
+  //let inputAddress = document.getElementById('address').value;
+  let inputAddress = "<%= @post.address %>";
+  let map
+  let geocoder
+
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: <%= @post.latitude %>, lng:<%= @post.longitude %> },
+  zoom: 8
+  });
+
+  
+
+  // geocodingしたあとmapを移動
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+　　　　　　　　　　　　// map.setCenterで地図が移動
+      map.setCenter(results[0].geometry.location);
+
+　　　　　　　　　　　　// google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+/*
+let inputAddress = document.getElementById('address').value;
+window.onload = codeAddress;
+
+function codeAddress(){
+  // 入力を取得
+  // let inputAddress = document.getElementById('address').value;
+  
+
+  // geocodingしたあとmapを移動
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+　　　　　　　　　　　　// map.setCenterで地図が移動
+      map.setCenter(results[0].geometry.location);
+
+　　　　　　　　　　　　// google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+*/
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GMAP_API_KEY'] %>&callback=initMap" async defer></script>
 <%= link_to "ホームへ戻る", posts_path  %>
