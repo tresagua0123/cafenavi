@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   end
   def new
     @post = Post.new
+ 
   end
 
   def show
@@ -18,10 +19,13 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
+    @post.latitude = -34.397
+    @post.longitude = 150.644
+    
     if @post.save
-      redirect_back(fallback_location: root_path)
+      redirect_to posts_url, notice: "レビューが投稿されました。"
     else 
-      redirect_back(fallback_location: root_path)
+      redirect_to posts_url, notice: "不明な住所です。"
     end
 
 
@@ -45,7 +49,7 @@ class PostsController < ApplicationController
 
   private
   def post_params 
-    params.require(:post).permit(:content,:description, :address, :latitude, :longitude)
+    params.require(:post).permit(:content, :description, :address, :latitude, :longitude)
 
 
   end
