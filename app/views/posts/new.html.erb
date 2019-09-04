@@ -20,10 +20,25 @@
 class: "form-control mb-2", id:"post_name", placeholder:"タイトル"   %>
 <%= f.text_area :description, 
 class: "form-control mb-2", id:"post_description", placeholder:"詳細"   %>
-<%= f.text_area :address, 
-class: "form-control mb-2", id:"post_description", placeholder:"大まかな住所"   %>
 
+<% @prefectures.each do |prefecture| %>
+  <%= f.radio_button :prefecture_id, prefecture.id %>
+  <%= prefecture.name %>
+ <% end %>
+
+  <%= collection_check_boxes(:post, :tag_ids, Tag.all, :id, :name) do |b| %>
+  <%= b.label { b.check_box + b.text } %>
+  <% end %>
  
+
+
+<%= f.text_area :address, 
+class: "form-control mb-2", id:"post_address", placeholder:"大まかな住所"   %>
+
+<!--
+<%= f.collection_check_boxes :tags, @tags, :id, :name %>
+-->
+
  <div class="actions">
     <%= f.submit %>
   </div>

@@ -2,18 +2,25 @@ class PostsController < ApplicationController
   protect_from_forgery except: :create
   before_action :authenticate_user!, only:[:create, :show]
   def index
-    @posts = Post.all 
+    
+    @q = Post.ransack(params[:q])
+    @posts = @q.result.includes(:prefecture, :tags)
+
     @post = Post.new
     @like = Like.new
   end
+  
   def new
     @post = Post.new
- 
+    @q = Post.ransack(params[:q])
+    @prefectures = Prefecture.all
+    @tags = Tag.all
   end
 
   def show
     @post = Post.find(params[:id])
     @like = Like.new
+
   end
 
   def create
@@ -21,7 +28,7 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     @post.latitude = -34.397
     @post.longitude = 150.644
-    
+
     if @post.save
       redirect_to posts_url, notice: "レビューが投稿されました。"
     else 
@@ -49,8 +56,10 @@ class PostsController < ApplicationController
 
   private
   def post_params 
-    params.require(:post).permit(:content, :description, :address, :latitude, :longitude)
-
-
+    params.require(:post).permit(:content, :description,
+     :address, :latitude, :longitude, :prefecture_id, tag_ids:[])
+  end
+  def search_params
+    params.require(:q).permit!
   end
 end
