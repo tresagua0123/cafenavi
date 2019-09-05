@@ -1,11 +1,11 @@
        <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-4">
        
         <h3 class="mt-3 text-center"><%= (icon 'fas','coffee')  %>検索</h3>
     <%= search_form_for @q, class: "mb-5" do |f| %>
 
     <div class="ro form-group">
-        <%= f.label :title_cont, 'タイトル', class:" col-form-label" %>
+        <%= f.label :title_cont, '店名', class:" col-form-label" %>
         
      
         <%= f.search_field :title_cont, class: 'form-control' %>
@@ -43,21 +43,25 @@
 </div>
 
 
-<div class="col-sm-9">
+<div class="col-sm-8">
 
 
     <h3 class="mt-3 text-center"><%= (icon 'fas','coffee')  %>一覧</h3>
-    <div class="mb-3">
-    <%= paginate @posts %>
+
+
+  <div class="pt-3">
+    
     <%= page_entries_info @posts %>
     </div>
-
+  
+<%#  ユーザー名   %>
     <% @posts.each do |post| %>
     <li><a class="text-dark" href="/users/<%= post.user.id%>"><%= post.user.name %></a>
     <%= post.title %>
     <%= (icon 'fas','coffee')  %><%= post.user.posts.count  %>杯目</li>
-    
+<%#  タイトル  %>
     <%= link_to post.title, post_path(post) %>
+<%#  いいね  %>
     <%= icon 'far', 'star'  %>
     (<%= post.liked_users.count.to_s + "いいね！"  %>)
   
@@ -70,23 +74,41 @@
     </li>
     <p></p>
 
+
+
+<%#  地域  %>
     <% if post.prefecture %>
-    <div class="btn mt-2 btn-info">
+    <div class="btn mt-2 btn-info btn-sm">
     <%= post.prefecture.name %>
     </div>
     
     <% end %>
 
-
+<%#  タグ  %>
     <% post.tag_ids.each do |tag|%> 
 <% tag %>
 <% tags = Tag.find [tag]%>
-<div class="btn  btn-success mt-2">
+<div class="btn  btn-success btn-sm mt-2">
 <%= tags[0].name %>
 </div>
 <% end %>
 
+
+
 <% end %>
+
+
+
+
+   
+
+
+
+
+
+
+<div class="pt-3"><%= paginate @posts %></div>
+
     
 </div>
 
