@@ -1,13 +1,25 @@
 
-<p>By <%= @post.user.name  %>LV. 
-<%= @post.user.posts.count %></p>
-<%= @post.content %>
+<p>By <%= @post.user.name  %>
+<%= (icon 'fas','coffee')  %><%= @post.user.posts.count  %>杯目</p>
+<%= @post.title %>
 <%= @post.description %>
 <%= @post.address %>
+
+<% if @post.prefecture %>
+<div class="btn btn-info">
 <%= @post.prefecture.name %>
+</div>
+
+<% end %>
 
 
-<%= @post.tag_ids.each do |tag| %>
+
+<% @post.tag_ids.each do |tag|%> 
+<% tag %>
+<% tags = Tag.find [tag]%>
+<div class="btn btn-secondary">
+<%= tags[0].name %>
+</div>
 <% end %>
 
 

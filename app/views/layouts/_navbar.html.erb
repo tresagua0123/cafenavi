@@ -116,8 +116,11 @@
       </div>
     <% end %>
 
+  
+  <% if current_user %>
 
- <div class="jumbotron jumbotron-fluid ">
+<% else %>
+   <div class="jumbotron jumbotron-fluid ">
       <div class="container">
         <h1 class="text-center text-light">夢見るカフェが、</h1>
         <h1 class="text-center text-light">ここにはある。</h1>
@@ -127,4 +130,8 @@
         </div>
       </div>
     </div>
+    
+  <% end %>
+  
+
 

@@ -12,7 +12,13 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
 
+  validates :title, presence: true
   validates :address, presence: true
+  
+
+  
+
+
   geocoded_by :address
   after_validation :geocode, :if => lambda{ |obj| obj.address_changed? } 
   

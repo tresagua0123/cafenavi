@@ -1,9 +1,63 @@
-  
-    <h3>投稿一覧</h3>
+       <div class="row">
+        <div class="col-sm-3">
+       
+        <h3 class="mt-3 text-center"><%= (icon 'fas','coffee')  %>検索</h3>
+    <%= search_form_for @q, class: "mb-5" do |f| %>
+
+    <div class="ro form-group">
+        <%= f.label :title_cont, 'タイトル', class:" col-form-label" %>
+        
+     
+        <%= f.search_field :title_cont, class: 'form-control' %>
+        
+    </div>
+<hr>
+     <div class="ro form-group">
+        <%= f.label :description_cont, '詳細', class:" col-form-label" %>
+        <%= f.search_field :description_cont, class: 'form-control' %>
+    </div>
+<hr>
+    <div class="ro form-group">
+        <%= f.label :prefecture_id_eq, '地域', class:"" %>
+    <div class=" ">
+         <%= f.collection_select :prefecture_id_eq, @prefectures, :id, :name, :include_blank => '指定なし' %>
+    </div>
+    </div>
+<hr>
+   
+ 
+     <%= f.label :tags_id_in, 'タグ', class:" col-form-label"%>
+     <br>
+    <%=  f.collection_check_boxes :tags_id_in, @tags, :id, :name, class:"form-control"%>
+    
+
+
+<hr>
+
+    <div class="form-group">
+    <%= f.submit class: 'btn btn-outline-primary' %>
+    </div>
+ 
+       <% end %>
+
+</div>
+
+
+<div class="col-sm-9">
+
+
+    <h3 class="mt-3 text-center"><%= (icon 'fas','coffee')  %>一覧</h3>
+    <div class="mb-3">
+    <%= paginate @posts %>
+    <%= page_entries_info @posts %>
+    </div>
+
     <% @posts.each do |post| %>
     <li><a class="text-dark" href="/users/<%= post.user.id%>"><%= post.user.name %></a>
-    LV.<%= post.user.posts.count %>
-    <%= link_to post.content, post_path(post) %>
+    <%= post.title %>
+    <%= (icon 'fas','coffee')  %><%= post.user.posts.count  %>杯目</li>
+    
+    <%= link_to post.title, post_path(post) %>
     <%= icon 'far', 'star'  %>
     (<%= post.liked_users.count.to_s + "いいね！"  %>)
   
@@ -14,6 +68,26 @@
         <% end %>   
         <% end %>
     </li>
+    <p></p>
+
+    <% if post.prefecture %>
+    <div class="btn mt-2 btn-info">
+    <%= post.prefecture.name %>
+    </div>
+    
     <% end %>
 
 
+    <% post.tag_ids.each do |tag|%> 
+<% tag %>
+<% tags = Tag.find [tag]%>
+<div class="btn  btn-success mt-2">
+<%= tags[0].name %>
+</div>
+<% end %>
+
+<% end %>
+    
+</div>
+
+</div>
