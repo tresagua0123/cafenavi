@@ -4,13 +4,16 @@ class PostsController < ApplicationController
   def index
     
     @q = Post.ransack(params[:q])
-    @posts = @q.result.includes(:prefecture, :tags).page(params[:page]).per(3)
+    @posts = @q.result.includes(:prefecture,  :image_attachment, :user).page(params[:page]).per(6)
+    
 
     @prefectures = Prefecture.all
     @tags = Tag.all
 
-    @post = Post.new
     @like = Like.new
+
+
+
   end
   
   def new
@@ -56,12 +59,13 @@ class PostsController < ApplicationController
       format.js
     end
   end
-  
+
 
   private
   def post_params 
     params.require(:post).permit(:title, :description,
-     :address, :latitude, :longitude, :prefecture_id, :prefecture_id_eq, :tags_id_in, tag_ids:[]) #:prefecture_id を除外
+     :address, :latitude, :longitude, :prefecture_id, :image,
+      :prefecture_id_eq, :tags_id_matches_all, tag_ids:[]) #:prefecture_id を除外
   end
   def search_params
     params.require(:q).permit!

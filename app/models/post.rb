@@ -2,7 +2,8 @@ class Post < ApplicationRecord
 
 
 
-  
+  has_one_attached :image
+
   belongs_to :user
   belongs_to :prefecture
 
@@ -14,6 +15,7 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
   validates :address, presence: true
+  validates :image, presence: true
   
 
   

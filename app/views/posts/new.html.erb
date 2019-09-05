@@ -1,4 +1,4 @@
-<h1>This is the page you post your coffee log!</h1>
+<h3 class= "text-center pt-3">新規投稿</h3>
 
 <% if @post.errors.present? %>
 
@@ -26,38 +26,48 @@
 <% end %>
 -->
 
-<%= form_with model: @post, local: true do |f|  %>
+<%= form_with model: @post, class:"form-new", local: true do |f|  %>
 
 
+<div class="border border-info ">
+<h4 class="p-2">地域(1つ選択)</h4>
 
 <% @prefectures.each do |prefecture| %>
   <%= f.radio_button :prefecture_id, prefecture.id %>
   <%= prefecture.name %>
  <% end %>
-
-
+<h4 class="p-2">タグ(複数選択可)</h4>
   <%= collection_check_boxes(:post, :tag_ids, Tag.all, :id, :name) do |b| %>
   <%= b.label { b.check_box + b.text } %>
    <% end %>
-
+<h4 class= "p-2">お店の名前</h4>
 <div class="form-group">
 <%= f.text_field :title, 
 class: "form-control mb-2", id:"post_name", placeholder:"店名"   %>
+
+<h4 class= "p-2">お店の住所</h4>
+<%= f.text_field :address, 
+class: "form-control mb-2", id:"post_address", placeholder:"住所"   %>
+<h4 class= "p-2">レビュー内容</h4>
 <%= f.text_area :description, 
-class: "form-control mb-2", id:"post_description", placeholder:"詳細"   %>
+class: "form-control mb-2", id:"post_description", placeholder:"詳細", size:'20x10'   %>
   
 
 
-<%= f.text_area :address, 
-class: "form-control mb-2", id:"post_address", placeholder:"大まかな住所"   %>
+<div class="form-group">
+<p>画像を登録</p>
+<%= f.file_field :image, class: "" %>
+</div>
 
 
 
- <div class="actions">
+
+ <div class="">
     <%= f.submit %>
   </div>
 
 
 </div>
 
+</div>
 <% end %>

@@ -1,5 +1,5 @@
        <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-3">
        
         <h3 class="mt-3 text-center"><%= (icon 'fas','coffee')  %>検索</h3>
     <%= search_form_for @q, class: "mb-5" do |f| %>
@@ -28,7 +28,7 @@
  
      <%= f.label :tags_id_in, 'タグ', class:" col-form-label"%>
      <br>
-    <%=  f.collection_check_boxes :tags_id_in, @tags, :id, :name, class:"form-control"%>
+    <%=  f.collection_check_boxes :tags_id_matches_all, @tags, :id, :name, class:"form-control"%>
     
 
 
@@ -43,7 +43,9 @@
 </div>
 
 
-<div class="col-sm-8">
+
+<%# 右ブロックの始まり%>
+<div class="col-sm-9">
 
 
     <h3 class="mt-3 text-center"><%= (icon 'fas','coffee')  %>一覧</h3>
@@ -54,59 +56,91 @@
     <%= page_entries_info @posts %>
     </div>
   
-<%#  ユーザー名   %>
-    <% @posts.each do |post| %>
-    <li><a class="text-dark" href="/users/<%= post.user.id%>"><%= post.user.name %></a>
-    <%= post.title %>
-    <%= (icon 'fas','coffee')  %><%= post.user.posts.count  %>杯目</li>
-<%#  タイトル  %>
-    <%= link_to post.title, post_path(post) %>
-<%#  いいね  %>
-    <%= icon 'far', 'star'  %>
-    (<%= post.liked_users.count.to_s + "いいね！"  %>)
+
+
+
+
+
+<%# 以下参考まで %>
+ 
+
+<%# 上を参考にして書く %>
+
+  <div class="row">
+
+ 
+  <% @posts.each do |post| %>
+  <div class="card col-lg-4 ">
+
+   <% if post.image.attached? %>
+       <%= image_tag post.image, :size =>'80x140', class: "card-img-top" %>
+    <% else %>
+     <%= link_to (image_tag 'story.jpg', :size =>'80x140', class: "card-img-top"), post_path(post) %>
+    <% end %>
+
+
+    <div class="card-body">
+      <h5><strong><%= link_to post.title, post_path(post), class:"text-dark"  %></strong>
+       <%= icon 'far', 'star'  %>
+    (<%= post.liked_users.count.to_s  %>)
+
   
         <% if current_user %>
         <% if current_user.already_liked?(post)  %>
         <% else %>
+        |
         <%= link_to (icon 'far', 'thumbs-up'), post_likes_path(post), method: :create %>
         <% end %>   
-        <% end %>
-    </li>
-    <p></p>
+        <% end %></h5>
+      
 
-
-
-<%#  地域  %>
-    <% if post.prefecture %>
-    <div class="btn mt-2 btn-info btn-sm">
+           <% if post.prefecture %>
+    <div class="btn mt-1 btn-info btn-sm">
     <%= post.prefecture.name %>
     </div>
     
     <% end %>
+        <% post.tag_ids.each do |tag|%> 
+        <% tag %>
+        <% tags = Tag.find [tag]%>
+        <div class="btn mt-1 btn-success btn-sm">
+        <%= tags[0].name %>
+        </div>
+        <% end %>
+      
+  <p></p>
 
-<%#  タグ  %>
-    <% post.tag_ids.each do |tag|%> 
-<% tag %>
-<% tags = Tag.find [tag]%>
-<div class="btn  btn-success btn-sm mt-2">
-<%= tags[0].name %>
-</div>
-<% end %>
-
-
-
-<% end %>
-
-
-
+<%#  いいね  %>
+   
+    
+    <p class="ellipsis pt-1"><%= post.description %>
+     <a class="text-dark" href="/users/<%= post.user.id%>"></p>
+     <hr>
+     <%= post.user.name %></a>
+    <%= (icon 'fas','coffee')  %><%= post.user.posts.count  %>杯目
 
    
 
+<%#  タグ  %>
+  
+ 
+
+
+
+      </div>
+    </div>
+ <% end %>
+
+
+
+      </div>
 
 
 
 
 
+
+<%# ページネーション機能⬇ %>
 <div class="pt-3"><%= paginate @posts %></div>
 
     

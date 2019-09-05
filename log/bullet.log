@@ -1,0 +1,41 @@
+2019-09-05 20:56:26[WARN] user: muratakaishou
+GET /posts?page=2&q%5Bdescription_cont%5D=&q%5Bprefecture_id_eq%5D=&q%5Btags_id_in%5D%5B%5D=&q%5Btags_id_in%5D%5B%5D=4&q%5Btags_id_in%5D%5B%5D=6&q%5Btitle_cont%5D=
+USE eager loading detected
+  Post => [:image_attachment]
+  Add to your finder: :includes => [:image_attachment]
+Call stack
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/posts/index.html.erb:75:in `block in _app_views_posts_index_html_erb___3182391556533840292_70339272500800'
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/posts/index.html.erb:72:in `_app_views_posts_index_html_erb___3182391556533840292_70339272500800'
+
+2019-09-05 20:56:26[WARN] user: muratakaishou
+GET /posts?page=2&q%5Bdescription_cont%5D=&q%5Bprefecture_id_eq%5D=&q%5Btags_id_in%5D%5B%5D=&q%5Btags_id_in%5D%5B%5D=4&q%5Btags_id_in%5D%5B%5D=6&q%5Btitle_cont%5D=
+USE eager loading detected
+  Post => [:user]
+  Add to your finder: :includes => [:user]
+Call stack
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/posts/index.html.erb:117:in `block in _app_views_posts_index_html_erb___3182391556533840292_70339272500800'
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/posts/index.html.erb:72:in `_app_views_posts_index_html_erb___3182391556533840292_70339272500800'
+
+2019-09-05 20:56:26[WARN] user: muratakaishou
+GET /posts?page=2&q%5Bdescription_cont%5D=&q%5Bprefecture_id_eq%5D=&q%5Btags_id_in%5D%5B%5D=&q%5Btags_id_in%5D%5B%5D=4&q%5Btags_id_in%5D%5B%5D=6&q%5Btitle_cont%5D=
+AVOID eager loading detected
+  Post => [:tags, :post_tags]
+  Remove from your finder: :includes => [:tags, :post_tags]
+Call stack
+
+2019-09-05 20:57:33[WARN] user: muratakaishou
+GET /posts?page=2&q%5Bdescription_cont%5D=&q%5Bprefecture_id_eq%5D=&q%5Btags_id_in%5D%5B%5D=&q%5Btags_id_in%5D%5B%5D=4&q%5Btags_id_in%5D%5B%5D=6&q%5Btitle_cont%5D=
+USE eager loading detected
+  Post => [:user]
+  Add to your finder: :includes => [:user]
+Call stack
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/posts/index.html.erb:117:in `block in _app_views_posts_index_html_erb___452949122147311781_70260329755820'
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/posts/index.html.erb:72:in `_app_views_posts_index_html_erb___452949122147311781_70260329755820'
+
+2019-09-05 20:57:33[WARN] user: muratakaishou
+GET /posts?page=2&q%5Bdescription_cont%5D=&q%5Bprefecture_id_eq%5D=&q%5Btags_id_in%5D%5B%5D=&q%5Btags_id_in%5D%5B%5D=4&q%5Btags_id_in%5D%5B%5D=6&q%5Btitle_cont%5D=
+AVOID eager loading detected
+  Post => [:tags, :post_tags]
+  Remove from your finder: :includes => [:tags, :post_tags]
+Call stack
+
