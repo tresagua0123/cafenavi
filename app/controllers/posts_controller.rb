@@ -65,7 +65,7 @@ class PostsController < ApplicationController
   def post_params 
     params.require(:post).permit(:title, :description,
      :address, :latitude, :longitude, :prefecture_id, :image,
-      :prefecture_id_eq, :tags_id_matches_all, tag_ids:[]) #:prefecture_id を除外
+      :prefecture_id_eq, :tags_id_matches_in, tag_ids:[]) #:prefecture_id を除外
   end
   def search_params
     params.require(:q).permit!
