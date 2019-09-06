@@ -8,7 +8,7 @@
     <ul class="navbar-nav mr-auto ">
     <li> 
       <em>
-    <%= link_to "Cafe Navi", root_path, class:"navbar-brand text-light text-weight-bold" %>
+    <%= link_to "カフェナビ", root_path, class:"navbar-brand text-light text-weight-bold" %>
     </em>
    
     <!--
@@ -35,10 +35,11 @@
 
       <!-- <ul class="navbar-nav"> -->
 
-
+            
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 
     <div class="navbar-nav">
@@ -49,10 +50,12 @@
         
       <%= link_to  (icon 'fas','paint-brush'), new_post_path, class:"fa fa-2x text-light" %></a>
     
+    
       <a class="nav-item nav-link active btn "> 
         
+        
       <%= link_to  (icon 'fas','coffee'), posts_path,class:"fa fa-2x text-light"  %></a>
-    
+        
 
       
       <a class="nav-item nav-link ">
@@ -122,15 +125,39 @@
 <% else %>
    <div class="jumbotron jumbotron-fluid ">
       <div class="container">
-        <h1 class="text-center text-light">夢見るカフェが、</h1>
+        <h1 class="text-center text-light">夢みるカフェが</h1>
         <h1 class="text-center text-light">ここにはある。</h1>
         <div class="text-right">
-        <button class="btn btn-lg" >
-        <%= link_to "About", about_path, class:"text-light btn btn-lg btn-info"  %> </button>
-        <button class="btn btn-lg" >
-        <%= link_to (icon 'fas','coffee')+"Join", new_user_registration_path, class:"text-light btn btn-lg btn-info"  %> </button>
+        
+        <%= link_to "About", about_path, class:"text-light btn btn-info"  %> 
+        <%= link_to (icon 'fas','coffee')+"Join", new_user_registration_path, class:"text-light btn btn-info"  %> 
+        <br>
+        <br>
+
+        <div class="text-left">
+         <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}&text=タイトル", class: 'twitter btn btn-secondary facebook', title: 'Twitter', target: '_blank' %>
+   <%= link_to 'Facebook', "https://www.facebook.com/sharer/sharer.php?u=#{request.url}&text=タイトル", class: 'btn btn-secondary facebook', title: 'Facebook', target: '_blank' %>
+   
+   <%= link_to 'LINE', "http://line.me/R/msg/text/?#{request.url}&text=タイトル", class: 'line btn btn-secondary line', title: 'LINE', target: '_blank' %>
+    </div>
+
         </div>
+
+
+        
+    
+  
+
+</div>
+
       </div>
+      <br>
+     
+
+  
+
+
+
     </div>
 
 
