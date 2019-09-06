@@ -19,7 +19,7 @@ Prefecture.create(id:9, name:'海外')
 
 
 Tag.create(name:'WiFi有')
-Tag.create(name:'充電器有')
+Tag.create(name:'充電OK')
 Tag.create(name:'駐車場有')
 Tag.create(name:'駅ちか')
 Tag.create(name:'静か')

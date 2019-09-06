@@ -39,3 +39,39 @@ AVOID eager loading detected
   Remove from your finder: :includes => [:tags, :post_tags]
 Call stack
 
+2019-09-06 14:13:34[WARN] user: muratakaishou
+GET /users
+USE eager loading detected
+  User => [:avatar_attachment]
+  Add to your finder: :includes => [:avatar_attachment]
+Call stack
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/users/index.html.erb:4:in `block in _app_views_users_index_html_erb___3304075675591100995_70346327818820'
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/users/index.html.erb:2:in `_app_views_users_index_html_erb___3304075675591100995_70346327818820'
+
+2019-09-06 16:56:09[WARN] user: muratakaishou
+GET /users/1
+USE eager loading detected
+  Post => [:user]
+  Add to your finder: :includes => [:user]
+Call stack
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/users/show.html.erb:31:in `block in _app_views_users_show_html_erb___2362217797474208376_70106484219700'
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/users/show.html.erb:30:in `_app_views_users_show_html_erb___2362217797474208376_70106484219700'
+
+2019-09-06 16:59:32[WARN] user: muratakaishou
+GET /users/1
+USE eager loading detected
+  Post => [:user]
+  Add to your finder: :includes => [:user]
+Call stack
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/users/show.html.erb:31:in `block in _app_views_users_show_html_erb___2362217797474208376_70106473411000'
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/users/show.html.erb:30:in `_app_views_users_show_html_erb___2362217797474208376_70106473411000'
+
+2019-09-06 17:00:08[WARN] user: muratakaishou
+GET /users/1
+USE eager loading detected
+  Post => [:user]
+  Add to your finder: :includes => [:user]
+Call stack
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/users/show.html.erb:31:in `block in _app_views_users_show_html_erb___2362217797474208376_70106467470120'
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/users/show.html.erb:30:in `_app_views_users_show_html_erb___2362217797474208376_70106467470120'
+

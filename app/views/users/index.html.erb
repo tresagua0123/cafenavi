@@ -1,4 +1,4 @@
-<h1>ユーザー一覧</h1>
+<h3 class="pt-3 text-center">ユーザー一覧</h3>
 <!-- <% @users.each do |user| %>
 <a href="/users/<%= user.id %>"><%= user.name %></a>
     <% if user.avatar.attached? %>
@@ -11,23 +11,28 @@
 <% end %>
 -->
 
-<%= link_to "ホームに戻る", posts_path  %>
 
       <div class="row">
    
      <% @users.each do |user| %>
 
-<div class="card col-lg-2 p-2 m-3">
+<div class="card col-md-3 p-2 m-3">
   
 
     <% if user.avatar.attached? %>
-    <%= image_tag user.avatar, :size =>'80x140', class: "card-img-top" %>
+    <%= link_to (image_tag user.avatar, :size =>'120x200', class: "card-img-top"), user_path(user) %>
     <% else %>
-     <%= image_tag 'cover.jpg', :size =>'80x140', class: "card-img-top" %>
+      <%= link_to (image_tag 'cover.jpg', :size =>'120x200', class: "card-img-top"), user_path(user) %>
     <% end %>
 
     <div class="card-body">
-      <h5><strong><%= link_to user.name, user_path(user), class:"text-dark"  %></strong></h5>
+      <h5><strong><%= link_to user.name, 
+      user_path(user), class:"text-dark"  %></strong>
+      <%= (icon 'fas','coffee')  %><%= user.posts.count  %>杯目
+      </h5>
+
+
+
       <p>プロフィール: </p>
       <p><%= user.description  %></p>
     </div>

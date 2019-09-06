@@ -27,6 +27,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @like = Like.new
 
+    @comment = Comment.new
+    @comments = Comment.all
+
+
   end
 
   def create

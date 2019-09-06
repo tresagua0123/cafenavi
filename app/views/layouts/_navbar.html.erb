@@ -126,11 +126,15 @@
         <h1 class="text-center text-light">ここにはある。</h1>
         <div class="text-right">
         <button class="btn btn-lg" >
-        <%= link_to (icon 'fas','coffee')+"参加する", new_user_registration_path, class:"text-light btn btn-lg btn-info"  %> </button>
+        <%= link_to "About", about_path, class:"text-light btn btn-lg btn-info"  %> </button>
+        <button class="btn btn-lg" >
+        <%= link_to (icon 'fas','coffee')+"Join", new_user_registration_path, class:"text-light btn btn-lg btn-info"  %> </button>
         </div>
       </div>
     </div>
-    
+
+
+
   <% end %>
   
 

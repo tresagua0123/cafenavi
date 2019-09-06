@@ -1,9 +1,45 @@
+<div class="row">
 
-<p>By <%= @post.user.name  %>
-<%= (icon 'fas','coffee')  %><%= @post.user.posts.count  %>杯目</p>
-<%= @post.title %>
+<div class="col-sm-7">
+
+<div class="text-center">
+<h3 class="font-weight-bold"> <%= @post.title %></h3></div>
+
+
+
+
+<p><%= @post.user.name  %>
+<%= (icon 'fas','coffee')  %><%= @post.user.posts.count  %>杯目さんのレビュー</p>
+
+<div class="balloon1">
+
+<div class="icon">
+<% if current_user.avatar.attached? %>
+       <%= image_tag user.avatar, :size =>'40x80' %>
+    <% else %>
+     <%= link_to (image_tag 'cover.jpg', :size =>'100x100'), user_path(@post) %>
+    <% end %>
+</div>
+
+
 <%= @post.description %>
-<%= @post.address %>
+
+
+</div>
+
+
+
+<p>いいね件数: <%= @post.likes.count  %></p>
+<% if current_user.already_liked?(@post) %>
+<%= button_to 'いいねを取り消す', post_like_path(@post), method: :delete, class:"btn btn-sm btn-secondary"  %>
+<% else %>
+<%= button_to 'いいね', post_likes_path(@post), class:"btn btn-sm btn-secondary"  %>
+<% end %>
+<p>いいねしたユーザー: 
+<% @post.liked_users.each do |user| %>
+<%= user.name  %> |
+<% end %>
+</p>
 
 <% if @post.prefecture %>
 <div class="btn btn-info">
@@ -12,36 +48,21 @@
 
 <% end %>
 
-
-
 <% @post.tag_ids.each do |tag|%> 
 <% tag %>
 <% tags = Tag.find [tag]%>
-<div class="btn btn-secondary">
+<div class="btn btn-success">
 <%= tags[0].name %>
 </div>
 <% end %>
 
 
 
-
-<% if current_user == @post.user %>
-<%= link_to "投稿を削除", @post, method: :delete  %>
-<% end %>
-
-<p>いいね件数: <%= @post.likes.count  %></p>
-<% if current_user.already_liked?(@post) %>
-<%= button_to 'いいねを取り消す', post_like_path(@post), method: :delete  %>
-<% else %>
-<%= button_to 'いいね', post_likes_path(@post)  %>
-<% end %>
-<p>いいねしたユーザー</p>
-<% @post.liked_users.each do |user| %>
-<li><%= user.name  %></li>
-<% end %>
-
-
-
+<% if @post.image.attached? %>
+       <%= image_tag post.image, :size =>'140x140' %>
+    <% else %>
+     <%= link_to (image_tag 'story.jpg', :size =>'80x300', class: "card-img-top"), post_path(@post) %>
+    <% end %>
 
 <!-- 地名入力用のinputを追加 -->
 <!-- <input id="address" type="textbox" value="<%= @post.address %>"> -->
@@ -50,7 +71,7 @@
 <input id="address" type="textbox" value="<%= @post.address %>" class="text-secondary" disabled>
 </p>
 -->
-<div id='map'>
+<div id='map' class="mt-2">
 </div>
 
 
@@ -59,7 +80,7 @@
 
 <style>
 #map{
-  height: 400px;
+  height: 300px;
 }
 </style>
 
@@ -143,6 +164,81 @@ function codeAddress(){
 }
 */
 
+
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GMAP_API_KEY'] %>&callback=initMap" async defer></script>
+
+
+
+
+
+
 <%= link_to "ホームへ戻る", posts_path  %>
+
+
+
+
+<% if current_user == @post.user %>
+<%= link_to "投稿を削除", @post, method: :delete  %>
+<% end %>
+
+</div>
+
+
+
+<div class="col-sm-5 pt-3">
+
+<% if @post.comments.any? %>
+<ul>
+<% @post.comments.each do |comment| %>
+<li>
+
+<% if comment.name? %>
+  <%= comment.name %>:
+  <%= comment.content %>
+<% else %>
+  <%= comment.post.user.name %>:
+<%= comment.content %>
+<% end %>
+
+
+</li>
+<% end %>
+</ul>
+
+<% end %>
+
+
+
+<h5 class="text-center">コメントを追加</h5>
+<div class="border ">
+
+
+<%= form_for([@post, @post.comments.build]) do |f| %>
+
+<div class="form-group">
+
+</div>
+<p>ユーザー名</p>
+<%= f.text_field :name, class:"form-control", placeholder: (current_user.name)%>
+<div class="form-group">
+
+<p>コメント</p>
+<%= f.text_area :content, class:"form-control" %>
+</div>
+
+<div class="text-center">
+<%= f.submit nil, class:"btn btn-primary"%></div>
+
+<% end %>
+</div>
+
+
+
+
+
+
+
+</div>
+
+</div>
