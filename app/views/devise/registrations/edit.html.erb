@@ -46,7 +46,7 @@
 <div class="text-center">
 <% if @user.avatar.attached? %>
   <!--<%= image_tag @user.avatar, class:"img-fluid mb-2"  %> -->
-  <%= image_tag @user.avatar, accept: "image/png, image/jpeg, image/gif", 
+  <%= image_tag @user.avatar.variant(resize:'200x200').processed, accept: "image/png, image/jpeg, image/gif", 
   size: '80x80',   style:"border-radius: 50%" %>
 </div>
 <% end %>
