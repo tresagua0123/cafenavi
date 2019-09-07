@@ -69,7 +69,7 @@
   <div class="row">
 
  
-  <% @posts.group(:title).each do |post| %>
+  <% @posts.each do |post| %>
   <div class="card col-lg-4 ">
 
    <% if post.image.attached? %>

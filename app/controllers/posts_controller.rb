@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   def index
     
     @q = Post.ransack(params[:q])
-    @posts = @q.result.includes(:prefecture,  :image_attachment, :user).page(params[:page]).per(6)
+    @posts = @q.result.includes(:prefecture,  :image_attachment, :user).group('posts.id').page(params[:page]).per(6)
     
 
     @prefectures = Prefecture.all
