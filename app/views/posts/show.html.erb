@@ -14,10 +14,12 @@
 <div class="balloon1">
 
 <div class="icon">
-<% if current_user.avatar.attached? %>
-       <%= image_tag user.avatar, :size =>'40x80' %>
+<% if @post.user.avatar.attached? %>
+
+       <%= link_to (image_tag @post.user.avatar, :size =>'80x80'), user_path(@post.user), class:"card-img-top rounded-circle" %>
+
     <% else %>
-     <%= link_to (image_tag 'cover.jpg', :size =>'100x100'), user_path(@post) %>
+     <%= link_to (image_tag 'cover.jpg', :size =>'80x80'), user_path(@post.user), class:"card-img-top" %>
     <% end %>
 </div>
 
@@ -29,7 +31,7 @@
 
 
 
-<p>いいね件数: <%= @post.likes.count  %></p>
+<p class="pt-4">いいね件数: <%= @post.likes.count  %></p>
 <% if current_user.already_liked?(@post) %>
 <%= button_to 'いいねを取り消す', post_like_path(@post), method: :delete, class:"btn btn-sm btn-secondary"  %>
 <% else %>
@@ -59,7 +61,7 @@
 
 
 <% if @post.image.attached? %>
-       <%= image_tag post.image, :size =>'140x140' %>
+       <%= image_tag @post.image, :size =>'80x300', class:"card-img-top" %>
     <% else %>
      <%= link_to (image_tag 'story.jpg', :size =>'80x300', class: "card-img-top"), post_path(@post) %>
     <% end %>

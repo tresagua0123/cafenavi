@@ -73,15 +73,17 @@
   <div class="card col-lg-4 ">
 
    <% if post.image.attached? %>
-       <%= image_tag post.image, :size =>'80x140', class: "card-img-top" %>
+       <%= link_to (image_tag post.image, :size =>'80x140', class: "card-img-top"), post_path(post) %>
     <% else %>
      <%= link_to (image_tag 'story.jpg', :size =>'80x140', class: "card-img-top"), post_path(post) %>
     <% end %>
 
 
     <div class="card-body">
-      <h5><strong><%= link_to post.title, post_path(post), class:"text-dark"  %></strong>
-       <%= icon 'far', 'star'  %>
+      <h5><strong><%= link_to post.title, post_path(post)  %></strong>
+      </h5>
+      
+     <%= icon 'far', 'star'  %>
     (<%= post.liked_users.count.to_s  %>)
 
   
@@ -91,8 +93,9 @@
         |
         <%= link_to (icon 'far', 'thumbs-up'), post_likes_path(post), method: :create %>
         <% end %>   
-        <% end %></h5>
-      
+        <% end %>
+
+
 
            <% if post.prefecture %>
     <div class="btn mt-1 btn-info btn-sm">

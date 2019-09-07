@@ -137,6 +137,8 @@
   position: absolute;
   left: -110px;
   top: 0;
+  border-radius: 10px;
+
 }
 /* 三角アイコン */
 .balloon1::before{
@@ -166,7 +168,6 @@
   position: absolute;
   right: -110px;
   top: 0;
-op: 0;
 }
 /* 三角アイコン */
 .balloon2::before{
@@ -271,3 +272,5 @@ op: 0;
 .slack:hover {
   background-color: #9401ffe8;
 }
+
+	
