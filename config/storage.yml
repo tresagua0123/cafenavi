@@ -12,6 +12,8 @@ amazon:
   access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
   region: ap-northeast-1
+  #access_key_id:  ENV['AWS_ACCESS_KEY_ID']
+  #secret_access_key:  ENV['AWS_SECRET_ACCESS_KEY']
   bucket: cafenavi-pro
 
 # Remember not to checkin your GCS keyfile to a repository
