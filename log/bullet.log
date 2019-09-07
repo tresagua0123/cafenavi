@@ -75,3 +75,21 @@ Call stack
   /Users/muratakaishou/Desktop/myror/like_sample/app/views/users/show.html.erb:31:in `block in _app_views_users_show_html_erb___2362217797474208376_70106467470120'
   /Users/muratakaishou/Desktop/myror/like_sample/app/views/users/show.html.erb:30:in `_app_views_users_show_html_erb___2362217797474208376_70106467470120'
 
+2019-09-07 23:20:40[WARN] user: muratakaishou
+GET /posts
+USE eager loading detected
+  ActiveStorage::Attachment => [:blob]
+  Add to your finder: :includes => [:blob]
+Call stack
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/posts/index.html.erb:75:in `block in _app_views_posts_index_html_erb___1652562858664949849_70170619023980'
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/posts/index.html.erb:72:in `_app_views_posts_index_html_erb___1652562858664949849_70170619023980'
+
+2019-09-07 23:23:51[WARN] user: muratakaishou
+GET /posts
+USE eager loading detected
+  ActiveStorage::Attachment => [:blob]
+  Add to your finder: :includes => [:blob]
+Call stack
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/posts/index.html.erb:75:in `block in _app_views_posts_index_html_erb___1652562858664949849_70170615153540'
+  /Users/muratakaishou/Desktop/myror/like_sample/app/views/posts/index.html.erb:72:in `_app_views_posts_index_html_erb___1652562858664949849_70170615153540'
+
