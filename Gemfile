@@ -81,3 +81,4 @@ gem 'jquery-rails'
 gem 'ransack'
 gem 'rails-i18n'
 gem 'kaminari'
+gem 'aws-sdk-s3', require: false

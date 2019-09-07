@@ -56,7 +56,7 @@ class: "form-control mb-2", id:"post_description", placeholder:"詳細", size:'2
 
 <div class="form-group">
 <p>画像を登録</p>
-<%= f.file_field :image, class: "" %>
+<%= f.file_field :image, accept: "image/png, image/jpeg, image/gif", class: "" %>
 </div>
 
 

@@ -9,7 +9,7 @@
 
 <% if @user.avatar.attached? %>
   <!--<%= image_tag @user.avatar, class:"img-fluid mb-2"  %> -->
-  <%= image_tag @user.thumbnail_sm %>
+  <%= image_tag @user.avatar, :size =>'80x80' %>
   <% else %>
   <%= image_tag 'cover.jpg', :size =>'80x80' %>
 <% end %>
@@ -29,13 +29,13 @@
     <h4 class="text-center">レヴュー 一覧</h4>
     <% @user.posts.each do |post| %>
     <%= link_to post.title, post_path(post)%>
-    <hr>
+    <br>
     <% end %>
     <h4 class="text-center">いいねしている投稿</h4>
     <% @user.liked_posts.each do |post| %>
     <%= link_to post.title, post_path(post)  %>
-    <% end %>
     <br>
+    <% end %>
     <hr>
 </div>
 </div>
