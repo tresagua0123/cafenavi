@@ -19,7 +19,7 @@
        <%= link_to (image_tag @post.user.avatar.variant(resize:'200x200').processed, :size =>'80x80'), user_path(@post.user), class:"card-img-top rounded-circle" %>
 
     <% else %>
-     <%= link_to (image_tag 'cover.jpg', :size =>'80x80'), user_path(@post.user), class:"card-img-top" %>
+     <%= link_to (image_tag 'avatar.jpg', :size =>'80x80'), user_path(@post.user), class:"card-img-top" %>
     <% end %>
 </div>
 
