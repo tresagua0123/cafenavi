@@ -19,7 +19,7 @@
        <%= link_to (image_tag @post.user.avatar.variant(resize:'200x200').processed, :size =>'80x80'), user_path(@post.user), class:"card-img-top rounded-circle" %>
 
     <% else %>
-     <%= link_to (image_tag 'cover.jpg', :size =>'80x80'), user_path(@post.user), class:"card-img-top" %>
+     <%= link_to (image_tag 'cover2.jpg', :size =>'80x80'), user_path(@post.user), class:"card-img-top" %>
     <% end %>
 </div>
 
@@ -63,7 +63,7 @@
 <% if @post.image.attached? %>
        <%= image_tag @post.image.variant(resize:'200x200').processed, :size =>'80x300', class:"card-img-top mt-2" %>
     <% else %>
-     <%= link_to (image_tag 'story.jpg', :size =>'80x300', class: "card-img-top mt-2"), post_path(@post) %>
+     <%= link_to (image_tag 'story2.jpg', :size =>'80x300', class: "card-img-top mt-2"), post_path(@post) %>
     <% end %>
 <br>
 <!-- 地名入力用のinputを追加 -->
