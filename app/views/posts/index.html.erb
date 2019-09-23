@@ -83,7 +83,9 @@
       <h5><strong><%= link_to post.title, post_path(post)  %></strong>
       </h5>
       
-     <%= icon 'far', 'star'  %>
+      <!--
+     <%= (icon 'far', 'heart')  %>
+
     (<%= post.liked_users.count.to_s  %>)
 
   
@@ -94,6 +96,10 @@
         <%= link_to (icon 'far', 'thumbs-up'), post_likes_path(post), method: :create %>
         <% end %>   
         <% end %>
+        -->
+
+        <!-- added on 9/17 -->
+        <%= render partial: 'posts/posts', locals: {post: post}  %>
 
 
 

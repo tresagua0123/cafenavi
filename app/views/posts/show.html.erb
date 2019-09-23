@@ -29,8 +29,12 @@
 
 </div>
 
+<div class="pt-4">
+<%= render partial: 'posts/posts', locals: {post: @post}  %>
+</div>
 
 
+<!--
 <p class="pt-4">いいね件数: <%= @post.likes.count  %></p>
 <% if current_user.already_liked?(@post) %>
 <%= button_to 'いいねを取り消す', post_like_path(@post), method: :delete, class:"btn btn-sm btn-secondary"  %>
@@ -39,9 +43,12 @@
 <% end %>
 <p>いいねしたユーザー: 
 <% @post.liked_users.each do |user| %>
-<%= user.name  %> |
+<%= user.name  %> 
+<%= @post.liked_users.length %>
 <% end %>
 </p>
+-->
+
 
 <% if @post.prefecture %>
 <div class="btn btn-info">
