@@ -282,3 +282,12 @@ Call stack
   /Users/muratakaishou/Desktop/myror/like_sample/app/views/users/index.html.erb:11:in `block in _app_views_users_index_html_erb__2191142291889040944_70122055142920'
   /Users/muratakaishou/Desktop/myror/like_sample/app/views/users/index.html.erb:6:in `_app_views_users_index_html_erb__2191142291889040944_70122055142920'
 
+2019-10-09 09:31:00[WARN] user: muratakaishou
+GET /users
+USE eager loading detected
+  ActiveStorage::Attachment => [:blob]
+  Add to your finder: :includes => [:blob]
+Call stack
+  /Users/muratakaishou/Desktop/myror/cafenavi/app/views/users/index.html.erb:11:in `block in _app_views_users_index_html_erb__3311070961946094543_70113450331100'
+  /Users/muratakaishou/Desktop/myror/cafenavi/app/views/users/index.html.erb:6:in `_app_views_users_index_html_erb__3311070961946094543_70113450331100'
+
