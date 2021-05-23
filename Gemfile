@@ -71,7 +71,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise", ">= 4.7.1"
 gem 'bootstrap'
 gem 'font-awesome-sass', '~> 5.4.1'
-gem 'simple_form'
+gem "simple_form", ">= 5.0.0"
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'gmaps4rails'

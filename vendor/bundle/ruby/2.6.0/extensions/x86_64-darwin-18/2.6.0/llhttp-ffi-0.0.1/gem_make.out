@@ -1,0 +1,3 @@
+current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/llhttp-ffi-0.0.1/ext
+/Users/muratakaishou/.rbenv/versions/2.6.3/bin/ruby -rrubygems /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/rake-13.0.3/exe/rake RUBYARCHDIR\=/Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/extensions/x86_64-darwin-18/2.6.0/llhttp-ffi-0.0.1 RUBYLIBDIR\=/Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/extensions/x86_64-darwin-18/2.6.0/llhttp-ffi-0.0.1
+clang -bundle -o x86_64-darwin/libllhttp-ext.bundle x86_64-darwin/llhttp/api.o x86_64-darwin/llhttp/http.o x86_64-darwin/llhttp/llhttp.o x86_64-darwin/llhttp/llhttp_ext.o -fexceptions 
