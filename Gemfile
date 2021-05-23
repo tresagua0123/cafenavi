@@ -68,7 +68,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'devise'
+gem "devise", ">= 4.7.1"
 gem 'bootstrap'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem 'simple_form'
