@@ -7,13 +7,11 @@
                 required: false,
                 autofocus: true,
                 label: false,
-                placeholder: "メールアドレス",
-                input_html: { autocomplete: "email", value: "guest@sample.com" } %>
+                placeholder: "メールアドレス" %>
     <%= f.input :password,
                 required: false,
                 label: false,
-                placeholder: 'パスワード',
-                input_html: { autocomplete: "current-password", value:"password" } %>
+                placeholder: 'パスワード' %>
     <%= f.button :submit, "Log in", class: 'btn btn-primary btn-block' %>
 <% end %>
 
