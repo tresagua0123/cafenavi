@@ -1,5 +1,5 @@
 current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/ext/bootsnap
-/Users/muratakaishou/.rbenv/versions/2.6.3/bin/ruby -I /Users/muratakaishou/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210523-4971-g7focc.rb extconf.rb
+/Users/muratakaishou/.rbenv/versions/2.6.3/bin/ruby -I /Users/muratakaishou/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210523-85870-1bq1omh.rb extconf.rb
 creating Makefile
 
 current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/ext/bootsnap
@@ -12,4 +12,4 @@ linking shared-object bootsnap/bootsnap.bundle
 
 current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/ext/bootsnap
 make "DESTDIR=" install
-/usr/local/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20210523-4971-rob2l8/bootsnap
+/usr/local/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20210523-85870-1qzduqn/bootsnap

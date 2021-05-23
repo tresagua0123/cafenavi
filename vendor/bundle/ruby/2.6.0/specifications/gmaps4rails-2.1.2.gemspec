@@ -12,10 +12,10 @@ Gem::Specification.new do |s|
   s.description = "Enables easy Google map + overlays creation.".freeze
   s.email = ["apnea.diving.deep@gmail.com".freeze, "david.ruyer@gmail.com".freeze]
   s.homepage = "http://github.com/apneadiving/Google-Maps-for-Rails".freeze
-  s.rubygems_version = "3.0.6".freeze
+  s.rubygems_version = "3.0.3".freeze
   s.summary = "Maps made easy for Ruby apps".freeze
 
-  s.installed_by_version = "3.0.6" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.0.3" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

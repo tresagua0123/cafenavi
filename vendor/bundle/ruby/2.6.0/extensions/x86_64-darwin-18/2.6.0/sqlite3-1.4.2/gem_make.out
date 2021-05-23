@@ -1,5 +1,5 @@
 current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/sqlite3-1.4.2/ext/sqlite3
-/Users/muratakaishou/.rbenv/versions/2.6.3/bin/ruby -I /Users/muratakaishou/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210523-4971-3nv96y.rb extconf.rb
+/Users/muratakaishou/.rbenv/versions/2.6.3/bin/ruby -I /Users/muratakaishou/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210523-85870-54a4zv.rb extconf.rb
 checking for sqlite3.h... yes
 checking for pthread_create() in -lpthread... yes
 checking for -ldl... yes
@@ -60,4 +60,4 @@ linking shared-object sqlite3/sqlite3_native.bundle
 
 current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/sqlite3-1.4.2/ext/sqlite3
 make "DESTDIR=" install
-/usr/local/bin/ginstall -c -m 0755 sqlite3_native.bundle ./.gem.20210523-4971-3cuw0u/sqlite3
+/usr/local/bin/ginstall -c -m 0755 sqlite3_native.bundle ./.gem.20210523-85870-1omb3xy/sqlite3

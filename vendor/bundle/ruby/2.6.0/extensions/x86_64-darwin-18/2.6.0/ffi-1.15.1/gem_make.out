@@ -1,5 +1,5 @@
 current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/ffi-1.15.1/ext/ffi_c
-/Users/muratakaishou/.rbenv/versions/2.6.3/bin/ruby -I /Users/muratakaishou/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210523-4971-92lquj.rb extconf.rb
+/Users/muratakaishou/.rbenv/versions/2.6.3/bin/ruby -I /Users/muratakaishou/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210523-85870-x6y0ig.rb extconf.rb
 checking for ffi_prep_closure_loc() in -lffi... no
 checking for ffi_prep_closure_loc() in -llibffi... no
 checking for ffi_prep_closure_loc() in -llibffi-8... no
@@ -124,4 +124,4 @@ compiling Types.c
 compiling Variadic.c
 compiling ffi.c
 linking shared-object ffi_c.bundle
-/usr/local/bin/ginstall -c -m 0755 ffi_c.bundle ./.gem.20210523-4971-1ep8qs3
+/usr/local/bin/ginstall -c -m 0755 ffi_c.bundle ./.gem.20210523-85870-q7lyjg

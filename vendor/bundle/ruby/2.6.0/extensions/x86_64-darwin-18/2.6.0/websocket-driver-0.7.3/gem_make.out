@@ -1,5 +1,5 @@
 current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
-/Users/muratakaishou/.rbenv/versions/2.6.3/bin/ruby -I /Users/muratakaishou/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210523-4971-ruxtsn.rb extconf.rb
+/Users/muratakaishou/.rbenv/versions/2.6.3/bin/ruby -I /Users/muratakaishou/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210523-85870-11c8e25.rb extconf.rb
 creating Makefile
 
 current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
@@ -12,4 +12,4 @@ linking shared-object websocket_mask.bundle
 
 current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
 make "DESTDIR=" install
-/usr/local/bin/ginstall -c -m 0755 websocket_mask.bundle ./.gem.20210523-4971-yjqaa8
+/usr/local/bin/ginstall -c -m 0755 websocket_mask.bundle ./.gem.20210523-85870-1p7jzhx

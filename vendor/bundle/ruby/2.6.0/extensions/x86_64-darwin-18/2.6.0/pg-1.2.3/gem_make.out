@@ -1,5 +1,5 @@
 current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/pg-1.2.3/ext
-/Users/muratakaishou/.rbenv/versions/2.6.3/bin/ruby -I /Users/muratakaishou/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210523-4971-1u1bhj9.rb extconf.rb
+/Users/muratakaishou/.rbenv/versions/2.6.3/bin/ruby -I /Users/muratakaishou/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210523-85870-skwnv9.rb extconf.rb
 checking for pg_config... yes
 Using config values from /usr/local/bin/pg_config
 checking for libpq-fe.h... yes
@@ -150,4 +150,4 @@ linking shared-object pg_ext.bundle
 
 current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/pg-1.2.3/ext
 make "DESTDIR=" install
-/usr/local/bin/ginstall -c -m 0755 pg_ext.bundle ./.gem.20210523-4971-hmiv1j
+/usr/local/bin/ginstall -c -m 0755 pg_ext.bundle ./.gem.20210523-85870-1l74c7s

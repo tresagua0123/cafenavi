@@ -16,10 +16,10 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/flavorjones/chromedriver-helper".freeze
   s.licenses = ["MIT".freeze]
   s.post_install_message = "\n  +--------------------------------------------------------------------+\n  |                                                                    |\n  |  NOTICE: chromedriver-helper is deprecated after 2019-03-31.       |\n  |                                                                    |\n  |  Please update to use the 'webdrivers' gem instead.                |\n  |  See https://github.com/flavorjones/chromedriver-helper/issues/83  |\n  |                                                                    |\n  +--------------------------------------------------------------------+\n\n".freeze
-  s.rubygems_version = "3.0.6".freeze
+  s.rubygems_version = "3.0.3".freeze
   s.summary = "Deprecated in favor of the 'webdrivers' gem.".freeze
 
-  s.installed_by_version = "3.0.6" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.0.3" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

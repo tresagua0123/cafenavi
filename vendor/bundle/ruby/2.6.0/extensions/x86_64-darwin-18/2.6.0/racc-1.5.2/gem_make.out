@@ -1,5 +1,5 @@
 current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/racc-1.5.2/ext/racc/cparse
-/Users/muratakaishou/.rbenv/versions/2.6.3/bin/ruby -I /Users/muratakaishou/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210523-97753-8se2om.rb extconf.rb
+/Users/muratakaishou/.rbenv/versions/2.6.3/bin/ruby -I /Users/muratakaishou/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210523-85870-jt8j1p.rb extconf.rb
 checking for rb_ary_subseq()... yes
 creating Makefile
 
@@ -13,4 +13,4 @@ linking shared-object racc/cparse.bundle
 
 current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/racc-1.5.2/ext/racc/cparse
 make "DESTDIR=" install
-/usr/local/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20210523-97753-81p9ge/racc
+/usr/local/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20210523-85870-1phws5r/racc

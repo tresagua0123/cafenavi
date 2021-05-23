@@ -1,5 +1,5 @@
 current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/nio4r-2.5.7/ext/nio4r
-/Users/muratakaishou/.rbenv/versions/2.6.3/bin/ruby -I /Users/muratakaishou/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210523-4971-3mu6n6.rb extconf.rb
+/Users/muratakaishou/.rbenv/versions/2.6.3/bin/ruby -I /Users/muratakaishou/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210523-85870-c3w5xs.rb extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... no
 checking for linux/io_uring.h... no
@@ -93,4 +93,4 @@ linking shared-object nio4r_ext.bundle
 
 current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/nio4r-2.5.7/ext/nio4r
 make "DESTDIR=" install
-/usr/local/bin/ginstall -c -m 0755 nio4r_ext.bundle ./.gem.20210523-4971-7mqopk
+/usr/local/bin/ginstall -c -m 0755 nio4r_ext.bundle ./.gem.20210523-85870-15pbtax

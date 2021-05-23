@@ -1,15 +1,15 @@
-current directory: /Users/muratakaishou/Desktop/myror/like_sample/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
-/Users/muratakaishou/.rvm/rubies/ruby-2.6.3/bin/ruby -I /Users/muratakaishou/.rvm/rubies/ruby-2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20190903-9901-e5slk9.rb extconf.rb
+current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/muratakaishou/.rbenv/versions/2.6.3/bin/ruby -I /Users/muratakaishou/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210523-85870-gxho7c.rb extconf.rb
 creating Makefile
 
-current directory: /Users/muratakaishou/Desktop/myror/like_sample/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
 make "DESTDIR=" clean
 
-current directory: /Users/muratakaishou/Desktop/myror/like_sample/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
 make "DESTDIR="
 compiling cruby.c
 linking shared-object skiptrace/internal/cruby.bundle
 
-current directory: /Users/muratakaishou/Desktop/myror/like_sample/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+current directory: /Users/muratakaishou/Desktop/important/myror/cafenavi/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
 make "DESTDIR=" install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20190903-9901-cgt9ru/skiptrace/internal
+/usr/local/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20210523-85870-hqp0y5/skiptrace/internal
