@@ -28,7 +28,7 @@ class Post < ApplicationRecord
 
   private
   def geocode
-      uri = URI.escape("https://maps.googleapis.com/maps/api/geocode/json?address="+self.address.gsub(" ", "")+"&key=AIzaSyD1-AY1ENg8eR_6of_ZMKKt8MPcVqxyynE")
+      uri = URI.escape("https://maps.googleapis.com/maps/api/geocode/json?address="+self.address.gsub(" ", "")+"&key=ENV['GMAP_API_KEY']")
       res = HTTP.get(uri).to_s
       response = JSON.parse(res)
 
